@@ -4,20 +4,14 @@ const ticketControl = new TicketControl();
 
 const socketController = (socket) => {
 
-    socket.on('disconnect', () => {
-        console.log('Client disconected', socket.id);
-    });
+    socket.emit('latest-ticket', ticketControl.latest);
 
-    socket.on('tail-socket', (payload, callback) => {
-        console.log('payload', payload);
-        const id = 123456789;
-        callback(id);
-
-        socket.broadcast.emit('tail-socket', payload);
+    socket.on('next-ticket', (payload, callback) => {
+        const next = ticketControl.next();
+        callback(next);
     });
 
 }
-
 
 
 module.exports = {
