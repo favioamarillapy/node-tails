@@ -12,13 +12,14 @@
 </head>
 
 <body class="container">
-    <h1 class="mt-5">Desktop</h1>
+    <h1 id="lblTitle" class="mt-5">Desktop</h1>
     <hr>
 
     <div class="row">
         <div class="col-8">
-            <h4>Atending to <small class="text-primary">....</small></h4>
-            <button class="btn btn-primary mt-5">
+            <h4>Atending to <small id="lblLatest" class="text-primary">....</small></h4>
+
+            <button id="btnAttend" class="btn btn-primary mt-5">
                 Next ticket
             </button>
         </div>
@@ -26,14 +27,15 @@
         <div class="col-4 text-center">
             <h4>In tail</h4>
 
-            <div class="alert alert-info mt-2">
-                <span>No more ticker</span>
+            <div id="alertMsg" class="alert alert-info mt-2">
+                <span id="alertMsgText">No more ticker</span>
             </div>
 
             <h1 id="lblPendings">10</h1>
         </div>
     </div>
 
+    <script src="./socket.io/socket.io.js"></script>
     <script src="./js/desktop.js"></script>
 
 </body>

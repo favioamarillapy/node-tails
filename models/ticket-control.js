@@ -56,14 +56,13 @@ class TicketControl {
         return 'Ticket ' + ticket.number;
     }
 
-    atending(desktop) {
+    attend(desktop) {
         if (this.tickets === 0) {
             return null;
         }
 
         const ticket = this.tickets.shift();
         ticket.desktop = desktop;
-
         this.fourLatest.unshift(ticket);
 
         if (this.fourLatest.length > 4) {
