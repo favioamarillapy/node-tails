@@ -11,9 +11,11 @@ const lblDesktop4 = document.querySelector('#lblDesktop4');
 
 
 socket.on('current-state', (fourLatest) => {
-    const [ticket1, ticket2, ticket3, ticket4] = fourLatest;
 
-    console.log(ticket1, ticket2, ticket3, ticket4);
+    const audio = new Audio('../audio/new-ticket.mp3');
+    audio.play();
+
+    const [ticket1, ticket2, ticket3, ticket4] = fourLatest;
 
     lblTicket1.innerText = (ticket1 != undefined) ? ticket1.number : "";
     lblDesktop1.innerText = (ticket1 != undefined) ? ticket1.desktop : "";
