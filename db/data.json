@@ -1,1 +1,6 @@
-{"latest":12,"today":27,"tickets":[{"number":12,"desktop":null}],"fourLatest":[{"number":11,"desktop":"Desktop 1"},{"number":10,"desktop":"Desktop 1"},{"number":9,"desktop":"Desktop 1"},{"number":8,"desktop":"Desktop 1"}]}
+{
+    "latest": 1,
+    "today": 0,
+    "tickets": [],
+    "fourLatest": []
+}
