@@ -10,6 +10,7 @@ const desktop = searchParam.get('desktop');
 
 const lblTitle = document.querySelector('#lblTitle');
 const lblLatest = document.querySelector('#lblLatest');
+const lblPendings = document.querySelector('#lblPendings');
 const btnAttend = document.querySelector('#btnAttend');
 const alertMsg = document.querySelector('#alertMsg');
 const alertMsgText = document.querySelector('#alertMsgText');
@@ -28,6 +29,10 @@ socket.on('disconnect', () => {
 
 socket.on('next-ticket', (payload) => {
     console.log('payload received', payload)
+});
+
+socket.on('tickets-pending', (quantity) => {
+    lblPendings.innerHTML = quantity;
 });
 
 btnAttend.addEventListener('click', () => {
